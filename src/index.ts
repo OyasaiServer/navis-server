@@ -1,6 +1,5 @@
 import express from 'express'
 import { spawn } from 'child_process'
-import * as fs from "fs";
 import { v1 } from 'uuid'
 const app = express()
 
@@ -15,7 +14,7 @@ app.post('/', (req, res) => {
     const genObj = spawn('java', [
         `-jar`,
         `./jmc2obj.jar`,
-        `./users/rokiseth`,
+        `../mc/${req.query.world}`,
         `--area=${req.query.minx},${req.query.minz},${req.query.maxx},${req.query.maxz}`,
         `--objfile=../htdocs/navis/${uuid}.obj`,
         `--mtlfile=../htdocs/navis/${uuid}.mtl`,

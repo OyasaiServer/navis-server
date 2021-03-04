@@ -30,6 +30,7 @@ app.post('/', (req, res) => {
         })
     })
     genObj.stdout.on('data', c => console.log(c.toString()))
+    genObj.stderr.on('data', c => console.log(c.toString()))
 })
 
 app.listen(4000, () => {

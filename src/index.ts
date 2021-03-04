@@ -15,7 +15,7 @@ app.get('/api', (req, res) => {
 
 app.post('/', (req, res) => {
     const uuid = v1()
-    const genObj = spawn('java', [
+    const genObj = spawn('sudo java', [
         `-jar`,
         `./jmc2obj.jar`,
         `../mc/${req.query.world}`,

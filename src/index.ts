@@ -9,6 +9,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/api', (req, res) => {
+    res.send("Hello, world!")
+})
+
 app.post('/', (req, res) => {
     const uuid = v1()
     const genObj = spawn('java', [
